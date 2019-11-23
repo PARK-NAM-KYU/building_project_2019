@@ -10,6 +10,7 @@ typedef struct {
 }Equipment;
 
 typedef struct {
+	char* name;
 	int hp;
 	Equipment equipment;
 }Player;
