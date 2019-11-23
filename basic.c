@@ -24,7 +24,7 @@ char* input_text(void)
 	return text;
 }
 // 안전한 숫자 받는 함수
-int input_number() 
+char* input_number() 
 {
 	char* num = (int*)malloc(sizeof(int) * SIZE);
 	char c;
