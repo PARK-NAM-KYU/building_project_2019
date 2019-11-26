@@ -14,10 +14,13 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="소스 파일\view">
-      <UniqueIdentifier>{8c46a668-8255-4f7f-8f28-94e3d18d79e8}</UniqueIdentifier>
+      <UniqueIdentifier>{20fb17ff-bb2c-406b-bbb4-ce9466837391}</UniqueIdentifier>
     </Filter>
     <Filter Include="소스 파일\logic">
-      <UniqueIdentifier>{d0732116-7651-49ba-9087-608de3784525}</UniqueIdentifier>
+      <UniqueIdentifier>{ca7e1188-936a-4d99-9b40-95774cf7c569}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\game">
+      <UniqueIdentifier>{c03d3651-832a-4f47-a2f4-2e8e418de55d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -27,36 +30,48 @@
     <ClCompile Include="basic.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="start_view.c">
-      <Filter>소스 파일\view</Filter>
-    </ClCompile>
-    <ClCompile Include="start_logic.c">
-      <Filter>소스 파일\logic</Filter>
-    </ClCompile>
-    <ClCompile Include="make_building.c">
+    <ClCompile Include="building_info.c">
       <Filter>소스 파일\logic</Filter>
     </ClCompile>
     <ClCompile Include="building_view.c">
       <Filter>소스 파일\view</Filter>
     </ClCompile>
-    <ClCompile Include="building_info.c">
+    <ClCompile Include="floor_logic.c">
       <Filter>소스 파일\logic</Filter>
     </ClCompile>
     <ClCompile Include="floor_view.c">
       <Filter>소스 파일\view</Filter>
     </ClCompile>
-    <ClCompile Include="floor_logic.c">
+    <ClCompile Include="game1.c">
+      <Filter>소스 파일\game</Filter>
+    </ClCompile>
+    <ClCompile Include="game2.c">
+      <Filter>소스 파일\game</Filter>
+    </ClCompile>
+    <ClCompile Include="game3.c">
+      <Filter>소스 파일\game</Filter>
+    </ClCompile>
+    <ClCompile Include="game4.c">
+      <Filter>소스 파일\game</Filter>
+    </ClCompile>
+    <ClCompile Include="make_building.c">
       <Filter>소스 파일\logic</Filter>
+    </ClCompile>
+    <ClCompile Include="start_logic.c">
+      <Filter>소스 파일\logic</Filter>
+    </ClCompile>
+    <ClCompile Include="start_view.c">
+      <Filter>소스 파일\view</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="basic.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="struct.h">
+    <ClInclude Include="function.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="function.h">
+    <ClInclude Include="struct.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

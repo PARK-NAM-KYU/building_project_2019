@@ -1,4 +1,4 @@
 #include "basic.h"
 #include "struct.h"
 
-Building ** make_building(){}
+Building ** make_building() {}

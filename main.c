@@ -1,5 +1,4 @@
 #include "basic.h"
-#include "struct.h"
 #include "function.h"
 
 int main() {
@@ -25,13 +24,13 @@ int main() {
 
 	building_info(&building); // 빌딩 정보 넣어주기
 
-	while (floor<=5) {
+	while (floor <= 5) {
 		floor_view(&position); //각 층 보여주기
 		choice = floor_logic(); //방 선택
 		building[floor - 1][choice - 1].func(&position, &me, &floor);
 	}
 
 	//엔딩화면
-	result_view(); // 그냥 무슨키 누르면 끝내주는 로직도 같이 구현
+	result_view(&position); // 그냥 무슨키 누르면 끝내주는 로직도 같이 구현
 
 }
