@@ -1,4 +1,5 @@
 #include "basic.h"
-#include "struct.h"
 
-int floor_logic() {}
+int floor_logic() {
+	//이 안에서 floor_view 호출
+}
