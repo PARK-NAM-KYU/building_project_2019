@@ -1,11 +1,44 @@
 #include "struct.h"
+#include "Windows.h"
 #define SIZE 100
 
-void basic_view1() {}
-void basic_view2() {}
-void gotoxy(Position position) {}
+void gotoxy(int x, int y) {
+	COORD pos = {x,y};
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
+}
+void clean_view() {
+	int i,k;
+	gotoxy(0, 4);
+	for (i = 0; i < 22; i++) {
+		for (k = 0; k < 100; k++)printf(" ");
+		if (i != 21)printf("\n");
+	}
+}
+//현재 화면
+void basic_view1(char * title) {
+	int i;
+	gotoxy(0, 0);
+	printf("윗창입니다\n");
+	printf("현재화면 : %s\n\n",title);
+	for (i = 0; i < 50;i++)printf("★");
+}
+//플레이어 개인정보
+void basic_view2(Player player) {
+	int i;
+	gotoxy(0, 26);
+	for (i = 0; i < 50; i++)printf("★");
+	printf("\n<플레이어의 정보>\n");
+	printf("hp : %d\n",player.hp);
+	if (player.equipment.weapon == 0)printf("무기 없음, ");
+	else printf("무기 있음, ");
+	if (player.equipment.potionList.effect == 0)printf("아이템 없음");
+	else printf("현재 포션의 효과 : %d",player.equipment.potionList.effect);
+}
+
+
+/*
 // 안전한 문자열 받는 함수
-char* input_text(void)
+char* input_text()
 {
 	char c;
 	int i = 0;
@@ -55,3 +88,4 @@ char input_char()
 		if (c == '\n') break;
 	}
 }
+*/

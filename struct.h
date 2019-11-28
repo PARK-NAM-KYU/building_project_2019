@@ -1,14 +1,15 @@
 #pragma once
-typedef struct {
-	void(*func)(Position* position, Player* player, int* floor); //방 화면을 넣음, 화면 안에다 로직 함수 구현
-	int reward; //무기나 치유템 중 하나
-}Building;
+
+//링크드 리스트로 구현
+typedef struct Potion{
+	int effect;
+	struct Potion *link;
+}Potion;
 
 typedef struct {
 	int weapon;
-	int * itemArr;
+	Potion potionList;//링크드리스트로 구현!
 }Equipment;
-
 
 typedef struct {
 	char* name;
@@ -17,6 +18,6 @@ typedef struct {
 }Player;
 
 typedef struct {
-	int x;
-	int y;
-}Position;
+	void(*func)(Player* player, int* floor); //방 화면을 넣음, 화면 안에다 로직 함수 구현
+	int reward; //무기나 치유템 중 하나
+}Building;
