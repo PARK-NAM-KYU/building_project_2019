@@ -63,6 +63,9 @@
     <ClCompile Include="result_view.c">
       <Filter>소스 파일\view</Filter>
     </ClCompile>
+    <ClCompile Include="event.c">
+      <Filter>소스 파일\game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="basic.h">
