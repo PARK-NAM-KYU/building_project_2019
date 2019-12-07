@@ -2,6 +2,15 @@
 #include "Windows.h"
 #define SIZE 100
 
+void setcursortype()
+{
+	CONSOLE_CURSOR_INFO CurInfo;
+	CurInfo.dwSize = 1;
+	CurInfo.bVisible = 0;
+	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &CurInfo);
+}
+
+
 void gotoxy(int x, int y) {
 	COORD pos = {x,y};
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);

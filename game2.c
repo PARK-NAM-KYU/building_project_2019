@@ -24,6 +24,7 @@ void game2(Player* player, int* floor) {
 		{'s',' ',' ','s'}
 	};//두더지 모양 (안잡히면 e 잡히면 d)
 
+	basic_view1("게임화면");
 	game2_start();	//게임 소개 5초 + 5초 COUNT
 	step1(mole, &score);
 	step2(mole, &score);
