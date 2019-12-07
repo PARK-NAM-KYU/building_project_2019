@@ -1,5 +1,6 @@
 #pragma once
 #include <stdio.h>
+#include <windows.h>
 #include "struct.h"
 
 void basic_view1(char * title);//실제 화면구현 위쪽 기본 창
