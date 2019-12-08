@@ -19,6 +19,9 @@
     <Filter Include="소스 파일\logic">
       <UniqueIdentifier>{d0732116-7651-49ba-9087-608de3784525}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\battle">
+      <UniqueIdentifier>{f1b8ca56-7a2d-4c3c-8728-611015913204}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
@@ -47,6 +50,9 @@
     </ClCompile>
     <ClCompile Include="floor_logic.c">
       <Filter>소스 파일\logic</Filter>
+    </ClCompile>
+    <ClCompile Include="battle.c">
+      <Filter>소스 파일\battle</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
