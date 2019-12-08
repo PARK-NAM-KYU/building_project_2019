@@ -1,4 +1,9 @@
 #pragma once
+//불리언
+typedef enum _boolean {
+	false,
+	true
+}bool;
 
 //링크드 리스트로 구현
 typedef struct Potion{
