@@ -2,7 +2,6 @@
 #include"function.h"
 
 void event(Player* player, int* floor) {
-	clean_view();
 	int X = 10;
 	int Y = 5;
 	gotoxy(X, Y + 0);

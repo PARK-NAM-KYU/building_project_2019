@@ -15,14 +15,7 @@ void gotoxy(int x, int y) {
 	COORD pos = {x,y};
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
 }
-void clean_view() {
-	int i,k;
-	gotoxy(0, 4);
-	for (i = 0; i < 22; i++) {
-		for (k = 0; k < 100; k++)printf(" ");
-		if (i != 21)printf("\n");
-	}
-}
+
 //현재 화면
 void basic_view1(char * title) {
 	int i;

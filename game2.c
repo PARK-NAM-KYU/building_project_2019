@@ -51,7 +51,7 @@ void randomXY(int *x, int *y, int *num) {
 void game2_start() {
 	
 	int t;
-	clean_view();
+
 	gotoxy(40, 10);
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
 	printf("[ 두 더 지 잡 기 ]");
@@ -73,14 +73,13 @@ void game2_start() {
 	printf("숫자를 입력해서 두더지를 잡으세요 !");
 	Sleep(5000);
 
-	clean_view();
 	//5초 뒤에 시작
 	for (t = 5;t > 0;t--) {
 		gotoxy(49, 15);
 		printf("%d", t);
 		Sleep(1000);
 	}
-	clean_view();
+
 }
 
 void game2_view(int *score) {
@@ -147,7 +146,7 @@ void step1(char arr[][4],int *score) {
 		}
 		arr[1][1] = 'e';
 		arr[1][2] = 'e';
-		clean_view();
+
 	}
 }
 void step2(char arr[][4],int *score) {
@@ -173,6 +172,5 @@ void step2(char arr[][4],int *score) {
 		}
 		arr[1][1] = 'e';
 		arr[1][2] = 'e';
-		clean_view();
 	}
 }

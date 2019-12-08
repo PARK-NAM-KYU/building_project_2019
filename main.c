@@ -8,7 +8,6 @@ int main() {
 	int floor = 1; //플레이어의 현재 층
 	int choice = 0; //각 층에서 사용자의 방 선택
 
-
 	system("mode con cols=100 lines=30");//콘솔창 고정
 	setcursortype(); //커서 없애주기
 
@@ -23,16 +22,17 @@ int main() {
 	
 	building_info(&building); // 빌딩 정보 넣어주기
 	
-	
 	basic_view2(me);
 	building_view(); //어떤 키를 누르면 다음으로 넘어가는 함수 구현
 	
 	while (floor <= 5) {
 		basic_view2(me);
+
 		floor_view(floor); //각 층 보여주기
-		//choice = floor_logic(); //방 선택
+		choice = floor_logic(); //방 선택
+		system("cls");
 		basic_view2(me);
-		building[floor - 1][1].func(&me, &floor);
+		building[floor - 1][choice].func(&me, &floor);
 	}
 	
 	//엔딩화면

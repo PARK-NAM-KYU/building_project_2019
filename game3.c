@@ -27,7 +27,7 @@ void remove_bullet(bullet* Bullet);
 void runBullet(bullet* Bullet, int k);
 void enemyDeath(Character * enemy);
 
-void game3(Character* player, int* floor) {
+void game3(Player* player, int* floor) {
 	int cnt = 1;
 	int i, j;
 	int cnt_hunt = 0;

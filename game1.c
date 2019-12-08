@@ -22,7 +22,6 @@ void game1_view() {
 void game1_start() {
 
 	int t;
-	clean_view();
 	gotoxy(42, 10);
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 14);
 	printf("[ 벽 돌 깨 기 ]");
@@ -34,14 +33,14 @@ void game1_start() {
 	printf("벽돌을 모두 파괴하세요 !");
 	Sleep(5000);
 
-	clean_view();
+
 	//5초 뒤에 시작
 	for (t = 5;t > 0;t--) {
 		gotoxy(49, 15);
 		printf("%d", t);
 		Sleep(1000);
 	}
-	clean_view();
+
 }
 
 //완성되면 금요일까지올릴께용..............아직 미완성이라
