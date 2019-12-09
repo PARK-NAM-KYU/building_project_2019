@@ -19,6 +19,7 @@ typedef struct {
 typedef struct {
 	char* name;
 	int hp;
+	int power;
 	Equipment equipment;
 }Player;
 

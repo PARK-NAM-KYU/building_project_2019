@@ -25,16 +25,16 @@ void basic_view1(char * title) {
 	for (i = 0; i < 50;i++)printf("★");
 }
 //플레이어 개인정보
-void basic_view2(Player player) {
+void basic_view2(Player* player) {
 	int i;
 	gotoxy(0, 26);
 	for (i = 0; i < 50; i++)printf("★");
 	printf("\n<플레이어의 정보>\n");
-	printf("hp : %d\n",player.hp);
-	if (player.equipment.weapon == 0)printf("무기 없음, ");
+	printf("hp : %d\n", player->hp);
+	if (player->equipment.weapon == 0)printf("무기 없음, ");
 	else printf("무기 있음, ");
-	if (player.equipment.potionList.effect == 0)printf("아이템 없음");
-	else printf("현재 포션의 효과 : %d",player.equipment.potionList.effect);
+	if (player->equipment.potionList.effect == 0)printf("아이템 없음");
+	else printf("현재 포션의 효과 : %d", player->equipment.potionList.effect);
 }
 
 

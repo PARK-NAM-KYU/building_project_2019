@@ -3,7 +3,8 @@
 
 int main() {
 
-	Player me = { "플레이어",50,{0,0}};
+	Player me = { "플레이어", 100, 20, {0, 0} };
+	Player boss = { "보스", 200, 20, {0, 0} };
 	Building** building;
 	int floor = 1; //플레이어의 현재 층
 	int choice = 0; //각 층에서 사용자의 방 선택
