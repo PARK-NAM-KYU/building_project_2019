@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="basic.c" />
+    <ClCompile Include="battle.c" />
     <ClCompile Include="building_info.c" />
     <ClCompile Include="building_view.c" />
     <ClCompile Include="event.c" />

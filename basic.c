@@ -1,5 +1,6 @@
 #include "struct.h"
-#include "Windows.h"
+#include "windows.h"
+
 #define SIZE 100
 
 void setcursortype()

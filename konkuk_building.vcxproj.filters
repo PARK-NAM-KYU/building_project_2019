@@ -66,6 +66,9 @@
     <ClCompile Include="event.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="battle.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="basic.h">
