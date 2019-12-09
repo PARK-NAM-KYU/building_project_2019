@@ -37,7 +37,7 @@ int main() {
 		basic_view2(&me);
 
 		floor_view(floor); //각 층 보여주기
-		choice = floor_logic(); //방 선택
+		choice = floor_logic(floor); //방 선택
 		system("cls");
 		basic_view2(&me);
 		building[floor - 1][choice].func(&me, &floor);

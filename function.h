@@ -4,6 +4,11 @@ Building ** make_building();
 void building_view();
 void building_info(Building *** );
 void floor_view(int);
-int floor_logic();
+int floor_logic(int floor);
 void result_view();
 void event(Player* player, int* floor);
+
+void game1(Player* player, int* floor);
+void game2(Player* player, int* floor);
+void game3(Player* player, int* floor);
+void game4(Player* player, int* floor);

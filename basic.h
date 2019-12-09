@@ -11,10 +11,6 @@ void basic_view2(Player* player);//실제 화면구현 아래쪽 기본 창
 void clean_view();
 
 void gotoxy(int x, int y);
-void game1(Player* player, int* floor);
-void game2(Player* player, int* floor);
-void game3(Player* player, int* floor);
-void game4(Player* player, int* floor);
 
 void setcursortype();
 /*
