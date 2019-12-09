@@ -36,7 +36,17 @@ void basic_view2(Player* player) {
 	if (player->equipment.potionList.effect == 0)printf("아이템 없음");
 	else printf("현재 포션의 효과 : %d", player->equipment.potionList.effect);
 }
+void clean_view()
+{
+	int i, j;
 
+	for (i = 0; i < 50; i++)
+	{
+		gotoxy(0, 100);
+		for (j = 0; j < 100; j++)
+			printf(" ");
+	}
+}
 
 /*
 // 안전한 문자열 받는 함수
