@@ -9,12 +9,19 @@ int main() {
 	int floor = 1; //플레이어의 현재 층
 	int choice = 0; //각 층에서 사용자의 방 선택
 
+	//일단은 포션 tmp
+	Potion* head = (Potion*)malloc(sizeof(Potion));
+	Potion* potionList = (Potion*)malloc(sizeof(Potion)); //포션 얻을때마다 공간할당 후
+	head->link = NULL; //head에 연결시켜주고 포션의 link에 NULL대입
+	potionList->effect = 30;
+
+
 	system("mode con cols=100 lines=30");//콘솔창 고정
 	setcursortype(); //커서 없애주기
 
 					 
 	//1.시작화면 출력하기
-	basic_view2(me);
+	basic_view2(&me);
 	start_view();
 	//2. 일단 하 기준으로 난이도 설정
 	//3. 건물 만들고 보여주기
