@@ -10,7 +10,7 @@ int main() {
 	int floor = 1; //플레이어의 현재 층
 	int choice = 0; //각 층에서 사용자의 방 선택
 	int i;
-	
+	game4(&me, &floor);
 	srand((unsigned int)time(NULL));
 
 	me.potionList = addPotion(30);

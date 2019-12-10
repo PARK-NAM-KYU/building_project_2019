@@ -193,7 +193,7 @@ int move_right(char blocks[][ROW]) {
 	}
 	for (i = 0; i < COLUMN; i++) {
 		for (j = ROW - 1; j > 0; j--) {			//오른쪽부터 검사한다.
-			if (blocks[i][j] == 2 && blocks[i][j - 1] == 1) {
+			if (blocks[i][j] == 1 && blocks[i][j - 1] == 2) {
 				return 0;
 			}
 		}
