@@ -8,20 +8,26 @@ void floor_view(int floor) {
 	sprintf(title, "%d", floor);
 	strcat(title, title2);
 	basic_view1(title);
-	
-	for (i = 0; i < 6-floor; i++) {
+
+	for (i = 0; i < 6 - floor; i++) {
 
 		gotoxy(j, 11);
+		printf("брбрбрбрбрбрбрбр");
+		gotoxy(j, 12);
+		printf("бр    брбр    бр");
+		gotoxy(j, 13);
+		printf("бр    брбр    бр");
+		gotoxy(j, 14);
+		printf("бр  брбрбрбр  бр");
+		gotoxy(j, 15);
+		printf("бр  брбрбрбр  бр");
+		gotoxy(j, 16);
+		printf("бр    брбр    бр");
+		gotoxy(j, 17);
+		printf("бр    брбр    бр");
+		gotoxy(j, 18);
+		printf("брбрбрбрбрбрбрбр");
 
-		printf("брбрбрбрбрбрбрбрбрбрбр\n");
-		printf("бр       брбр       бр\n");
-		printf("бр       брбр       бр\n");
-		printf("бр     брбрбрбр     бр\n");
-		printf("бр     брбрбрбр     бр\n");
-		printf("бр       брбр       бр\n");
-		printf("бр       брбр       бр\n");
-		printf("брбрбрбрбрбрбрбрбрбрбр\n");
-
-		j += 24;
+		j += 20;
 	}
 }
