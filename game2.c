@@ -5,8 +5,8 @@ void randomXY(int*, int*, int*);
 void game2_start();
 void game2_view(int*);
 void show_mole(char arr[][4], int*, int*);
-void step1(char[][4], int*); //1단계
-void step2(char[][4], int*); //2단계
+void step1(char[][4], int*, Player*); //1단계
+void step2(char[][4], int*, Player*); //2단계
 
 void game2(Player* player, int* floor) {
 
@@ -20,9 +20,15 @@ void game2(Player* player, int* floor) {
 		{'s',' ',' ','s'}
 	};//두더지 모양 (안잡히면 e 잡히면 d)
 
-	game2_start();	//게임 소개 5초 + 5초 COUNT
-	step1(mole, &score);
-	step2(mole, &score);
+	system("cls");
+	basic_view1("두더지 잡기");
+	basic_view2(player);
+	game2_start();	//게임 소개 5초
+	system("cls");
+	basic_view1("두더지 잡기");
+	basic_view2(player);
+	step1(mole, &score, player);
+	step2(mole, &score, player);
 
 	//게임 결과
 	gotoxy(48, 15);
@@ -33,7 +39,7 @@ void game2(Player* player, int* floor) {
 	else {
 		printf("LOSE!! SCORE: %d", score);
 	}
-	Sleep(3000);
+	Sleep(2000);
 	system("cls");
 }
 void randomXY(int *x, int *y, int *num) {
@@ -46,7 +52,6 @@ void randomXY(int *x, int *y, int *num) {
 void game2_start() {
 
 	int t;
-	clean_view();
 	gotoxy(40, 10);
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
 	printf("[ 두 더 지 잡 기 ]");
@@ -66,16 +71,7 @@ void game2_start() {
 	printf("└────────┘");
 	gotoxy(32, 21);
 	printf("숫자를 입력해서 두더지를 잡으세요 !");
-	Sleep(1000);
-
-	clean_view();
-	//2초 뒤에 시작
-	for (t = 2; t > 0; t--) {
-		gotoxy(49, 15);
-		printf("%d", t);
-		Sleep(1000);
-	}
-	clean_view();
+	Sleep(5000);
 }
 
 void game2_view(int *score) {
@@ -119,7 +115,7 @@ void show_mole(char arr[][4], int *x, int *y) {
 	}
 }
 
-void step1(char arr[][4], int *score) {
+void step1(char arr[][4], int *score, Player* player) {
 	int i, t, x, y, num;
 	char ch;
 
@@ -142,10 +138,12 @@ void step1(char arr[][4], int *score) {
 		}
 		arr[1][1] = 'e';
 		arr[1][2] = 'e';
-		clean_view();
+		system("cls");
+		basic_view1("두더지 잡기");
+		basic_view2(player);
 	}
 }
-void step2(char arr[][4], int *score) {
+void step2(char arr[][4], int *score, Player* player) {
 	int i, t, x, y, num;
 	char ch;
 
@@ -168,6 +166,8 @@ void step2(char arr[][4], int *score) {
 		}
 		arr[1][1] = 'e';
 		arr[1][2] = 'e';
-		clean_view();
+		system("cls");
+		basic_view1("두더지 잡기");
+		basic_view2(player);
 	}
 }

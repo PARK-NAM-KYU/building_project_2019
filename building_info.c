@@ -11,9 +11,9 @@ void building_info(Building*** building) {
 	int k; //보상있는 배틀방 횟수
 
 	//1층
-	
+
 	for (i = 0; i < 5; i++) {
-		(*building)[0][i].func = game4;
+		(*building)[0][i].func = game1;
 		if (i < 3) (*building)[0][i].reward = 1;
 		else (*building)[0][i].reward = 0;
 	}
@@ -31,7 +31,7 @@ void building_info(Building*** building) {
 			(*building)[1][i].reward = 0;
 		}
 	}
-	
+
 	//3층
 	k = 0;
 	j = rand() % 3;

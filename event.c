@@ -25,7 +25,7 @@ void event(Player* player, int* floor) {
 	printf("戌式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式戎 \n");
 	
 	(*floor)++;
-	Sleep(300);
+	Sleep(2000);
 	getchar();
 	system("cls");
 
