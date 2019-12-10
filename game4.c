@@ -25,8 +25,16 @@ void game4(Player* player, int* floor) {
 	basic_view1("테트리스 게임");
 	gotoxy(0, 4);
 	int result = game4_view();
-	if (result == 1)
+	gotoxy(30, 15);
+	if (result == 1) {
 		(*floor)++;
+		printf("성공!");
+		Sleep(1000);
+	}
+	else {
+		printf("실패!");
+		Sleep(1000);
+	}
 	system("cls");
 }
 int game4_view() {
