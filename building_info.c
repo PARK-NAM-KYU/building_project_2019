@@ -13,30 +13,43 @@ void building_info(Building*** building) {
 	//1類
 	
 	for (i = 0; i < 5; i++) {
-		(*building)[0][i].func = game1;
+		(*building)[0][i].func = game4;
+		if (i < 3) (*building)[0][i].reward = 1;
+		else (*building)[0][i].reward = 0;
 	}
-
 
 	//2類
 	k = 0;
 	j = rand() % 4;
 	for (i = 0; i < 4; i++) {
-		if (i == j) (*building)[1][i].func = event;
-		else (*building)[1][i].func = game2;
+		if (i == j) {
+			(*building)[1][i].func = event;
+			(*building)[1][i].reward = 1;
+		}
+		else {
+			(*building)[1][i].func = game2;
+			(*building)[1][i].reward = 0;
+		}
 	}
 	
 	//3類
 	k = 0;
 	j = rand() % 3;
 	for (i = 0; i < 3; i++) {
-		if (i == j) (*building)[2][i].func = event;
-		else (*building)[2][i].func = game3;
+		if (i == j) {
+			(*building)[2][i].func = event;
+			(*building)[2][i].reward = 1;
+		}
+		else {
+			(*building)[2][i].func = game3;
+			(*building)[2][i].reward = 0;
+		}
 	}
-
 
 	//4類
 	k = 0;
 	for (i = 0; i < 2; i++) {
 		(*building)[3][i].func = game4;
+		(*building)[3][i].reward = 1;
 	}
 }

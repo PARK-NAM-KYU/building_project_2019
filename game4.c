@@ -21,9 +21,8 @@ int move_right(char blocks[][ROW]);
 int bomb(char blocks[][ROW]);
 //int get_key();
 void game4(Player* player, int* floor) {
-	system("cls");
+
 	basic_view1("테트리스 게임");
-	basic_view2(&player);
 	gotoxy(0, 4);
 	int result = game4_view();
 	if (result == 1)

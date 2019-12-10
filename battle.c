@@ -31,10 +31,9 @@ void boss_attack(Player* me, Player* boss)
 void use_potion(Player* me)
 {
 	int i;
-	me->hp += me->equipment.potionList.effect; //회복시킨 후,
-	me->equipment.potionList.link = NULL; //head를 그 다음 노드에 연결
-
-	if (me->equipment.potionList.link != NULL)
+	me->hp += me->potionList->effect; //회복시킨 후,
+	me->potionList = (me->potionList->link);
+	if (me->potionList->link != NULL)
 	{
 		clean_view();
 		gotoxy(5, 20);
@@ -54,6 +53,8 @@ void use_potion(Player* me)
 		Sleep(1000);
 	}
 }
+
+
 
 void battle(Player* me, Player* boss)
 {

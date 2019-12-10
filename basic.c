@@ -17,6 +17,21 @@ void gotoxy(int x, int y) {
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
 }
 
+Potion * addPotion(int eff) {
+	Potion * p = (Potion *)malloc(sizeof(Potion));
+	memset(p, 0x0, sizeof(Potion));
+	p->effect = eff;
+	return p;
+}
+int cnt_potion(Potion * potion) {
+	int cnt = 1;
+	Potion * current = potion;
+	while (current->link != NULL) {
+		cnt++;
+		current = current->link;
+	}
+	return cnt;
+}
 //현재 화면
 void basic_view1(char * title) {
 	int i;
@@ -32,10 +47,11 @@ void basic_view2(Player* player) {
 	for (i = 0; i < 50; i++)printf("★");
 	printf("\n<플레이어의 정보>\n");
 	printf("hp : %d\n", player->hp);
-	if (player->equipment.weapon == 0)printf("무기 없음, ");
-	else printf("무기 있음, ");
-	if (player->equipment.potionList.effect == 0)printf("아이템 없음");
-	else printf("현재 포션의 효과 : %d", player->equipment.potionList.effect);
+	if (player->potionList->effect == 0)printf("아이템 없음");
+	else {
+		printf("소지한 포션 개수 : %d    ", cnt_potion(player->potionList));
+		printf("현재 포션의 효과 : %d", player->potionList->effect);
+	}
 }
 void clean_view()
 {

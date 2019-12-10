@@ -4,6 +4,7 @@
 void event(Player* player, int* floor) {
 	int X = 10;
 	int Y = 5;
+
 	gotoxy(X, Y + 0);
 	printf("忙式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式忖  ");
 	gotoxy(X, Y + 1);
@@ -23,6 +24,6 @@ void event(Player* player, int* floor) {
 	gotoxy(X, Y + 8);
 	printf("戌式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式戎 \n");
 	getchar();
-
+	system("cls");
 
 }

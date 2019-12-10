@@ -28,13 +28,13 @@ void game2(Player* player, int* floor) {
 	gotoxy(48, 15);
 	if (score >= 3000) {
 		printf("WIN!! SCORE: %d", score);
-		//*floor++;
+		(*floor)++;
 	}
 	else {
 		printf("LOSE!! SCORE: %d", score);
-		//if (*floor != 1) *floor--;
 	}
 	Sleep(3000);
+	system("cls");
 }
 void randomXY(int *x, int *y, int *num) {
 	srand(time(NULL));
@@ -66,11 +66,11 @@ void game2_start() {
 	printf("└────────┘");
 	gotoxy(32, 21);
 	printf("숫자를 입력해서 두더지를 잡으세요 !");
-	Sleep(5000);
+	Sleep(1000);
 
 	clean_view();
-	//5초 뒤에 시작
-	for (t = 5; t > 0; t--) {
+	//2초 뒤에 시작
+	for (t = 2; t > 0; t--) {
 		gotoxy(49, 15);
 		printf("%d", t);
 		Sleep(1000);

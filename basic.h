@@ -14,7 +14,7 @@ void clean_view();
 void gotoxy(int x, int y);
 
 void setcursortype();
-
+Potion * addPotion(int eff);
 /*
 char * input_text();
 int input_number();

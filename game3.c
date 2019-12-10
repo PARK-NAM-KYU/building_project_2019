@@ -13,7 +13,6 @@ typedef struct _character{
 	void(*shape)(int, int);
 	void(*anti_shape)(int, int);
 	bullet Bullet[3];
-
 } Character;
 
 void key_event(Character * me, bullet Bullet[]);
@@ -46,7 +45,6 @@ void game3(Player* player, int* floor) {
 	me.shape(me.x, me.y);
 	while (1)
 	{
-
 		if (me.health <= 0 || cnt_hunt >= 5)break;
 		if (cnt % 300 == 1) {
 			gotoxy(0, 5);
@@ -183,7 +181,6 @@ void player_shape(int x, int y) {
 void anti_player_shape(int x, int y) {
 	gotoxy(x - 5, y);
 	printf("      ");
-
 }
 
 void enemy_shape(int x, int y) {
