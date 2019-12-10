@@ -31,8 +31,7 @@ void boss_attack(Player* me, Player* boss)
 void use_potion(Player* me)
 {
 	int i;
-	me->hp += me->potionList->effect; //회복시킨 후,
-	me->potionList = (me->potionList->link);
+
 	if (me->potionList->link != NULL)
 	{
 		clean_view();
@@ -45,6 +44,8 @@ void use_potion(Player* me)
 			printf("●●●");
 			Sleep(100);
 		}
+		me->hp += me->potionList->effect; //회복시킨 후,
+		me->potionList = (me->potionList->link);
 	}
 	else
 	{
@@ -86,7 +87,7 @@ void battle(Player* me, Player* boss)
 			}
 			boss->hp -= me->power;
 			boss_state(boss);
-			Sleep(2000);
+			Sleep(1500);
 			if (boss->hp <= 0)
 			{
 				clean_view();
@@ -107,7 +108,7 @@ void battle(Player* me, Player* boss)
 					clean_view();
 					gotoxy(35, 15);
 					printf("====== PLAYER LOOSE ======");
-					break;
+					exit(1);
 				}
 			}
 		}
@@ -120,7 +121,8 @@ void battle(Player* me, Player* boss)
 			basic_view2(me);
 		}
 		else
-			continue;
+			printf("다시입력하세요.");
+		continue;
 	}
 	getch();
 }
