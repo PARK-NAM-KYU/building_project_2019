@@ -32,7 +32,7 @@ void use_potion(Player* me)
 {
 	int i;
 
-	if (me->potionList->link != NULL)
+	if (me->potionList->effect != 0)
 	{
 		clean_view();
 		gotoxy(5, 20);

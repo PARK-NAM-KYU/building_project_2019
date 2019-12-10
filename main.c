@@ -47,7 +47,7 @@ int main() {
 		}
 		if (i + 1 == floor && building[floor - 1][choice - 1].reward == 1) {
 
-			currentPotion->link = addPotion(rand() % 10 + 30);
+			currentPotion->link = addPotion(rand() % 10 + 300);
 			currentPotion = currentPotion->link;
 		}
 	}
