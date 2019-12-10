@@ -23,6 +23,9 @@ void event(Player* player, int* floor) {
 	printf("弛                                          弛  ");
 	gotoxy(X, Y + 8);
 	printf("戌式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式戎 \n");
+	
+	(*floor)++;
+	Sleep(300);
 	getchar();
 	system("cls");
 
