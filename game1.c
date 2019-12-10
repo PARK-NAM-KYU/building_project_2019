@@ -64,6 +64,7 @@ int quiz1() {
 
 	printf("1번에 들어갈 알맞은 단어는 ? ");
 	scanf("%s", temp);
+	if (CompStr(temp, answer1)) return 0;
 
 	printf("2번에 들어갈 알맞은 단어는 ? ");
 	scanf("%s", temp);
