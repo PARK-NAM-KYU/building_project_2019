@@ -3,8 +3,8 @@
 
 int main() {
 
-	Player me = { "플레이어", 100, 20,0};
-	Player boss = { "보스", 200, 20,0};
+	Player me = { "플레이어", 1000, 200,0};
+	Player boss = { "보스", 2000, 200,0};
 	Building** building;
 	Potion * currentPotion;
 	int floor = 1; //플레이어의 현재 층
@@ -13,7 +13,7 @@ int main() {
 	
 	srand((unsigned int)time(NULL));
 
-	me.potionList = addPotion(30);
+	me.potionList = addPotion(300);
 	currentPotion = me.potionList;
 
 	system("mode con cols=100 lines=30");//콘솔창 고정
