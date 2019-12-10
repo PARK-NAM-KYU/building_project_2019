@@ -35,10 +35,15 @@ void boss_attack(Player* me, Player* boss)
 void use_potion(Player* me)
 {
 	int i;
+<<<<<<< Updated upstream
 	me->hp += me->equipment.potionList.effect; //회복시킨 후,
 	me->equipment.potionList.link = NULL; //head를 그 다음 노드에 연결
 
 	if (me->equipment.potionList.link != NULL)
+=======
+	
+	if (me->potionList->link != NULL)
+>>>>>>> Stashed changes
 	{
 		clean_view();
 		gotoxy(5, 20);
@@ -50,6 +55,8 @@ void use_potion(Player* me)
 			printf("●●●");
 			Sleep(100);
 		}
+		me->hp += me->potionList->effect; //회복시킨 후,
+		me->potionList = (me->potionList->link);
 	}
 	else
 	{
@@ -109,8 +116,8 @@ void battle(Player* me, Player* boss)
 				{
 					clean_view();
 					gotoxy(35, 15);
-					printf("====== PLAYER LOOSE ======");
-					break;
+					printf("====== PLAYER LOSE ======");
+					exit(1);
 				}
 			}
 		}
@@ -123,6 +130,7 @@ void battle(Player* me, Player* boss)
 			basic_view2(me);
 		}
 		else
+			printf("다시 입력하세요!");
 			continue;
 	}
 	getch();

@@ -5,7 +5,12 @@
 int main() {
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	Player me;
+=======
+	Player me = { "플레이어", 1000, 200,0};
+	Player boss = { "보스", 2000, 200,0};
+>>>>>>> Stashed changes
 	Building** building;
 	Position position; // x,y 좌표
 =======
@@ -21,9 +26,14 @@ int main() {
 	int floor = 1; //플레이어의 현재 층
 	int choice; //각 층에서 사용자의 방 선택
 
+<<<<<<< Updated upstream
 	//position 초기화
 	position.x = 1;
 	position.y = 1;
+=======
+	me.potionList = addPotion(300);
+	currentPotion = me.potionList;
+>>>>>>> Stashed changes
 
 	//1.시작화면 출력하기
 <<<<<<< Updated upstream
