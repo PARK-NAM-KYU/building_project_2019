@@ -35,7 +35,7 @@ int main() {
 		i = floor;
 		basic_view2(&me);
 		floor_view(floor); //각 층 보여주기
-		choice = floor_logic(floor); //방 선택
+		choice = floor_logic(floor,&me); //방 선택
 		system("cls");
 		if (floor != 5) {
 			basic_view2(&me);
