@@ -107,7 +107,7 @@ void building_view() {
 		while (next) {
 			print_building(building);
 			next = floor_down(building);
-			Sleep(20);
+			Sleep(70);
 
 		}
 	}
