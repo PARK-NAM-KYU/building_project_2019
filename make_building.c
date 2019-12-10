@@ -14,7 +14,8 @@ Building ** make_building() {
 	}
 	else {
 		printf("Building 할당에 실패하였습니다.");
-		return 0;
+		exit(0);
+		//return 0;
 	}
 	return building;
 }

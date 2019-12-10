@@ -1,6 +1,4 @@
 #include "basic.h"
-#define PLAYERCODE 1;
-#define ENEMYCODE 2;
 
 typedef struct _bullet {
 	bool exist;

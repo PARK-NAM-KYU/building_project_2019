@@ -3,6 +3,7 @@
 #include <windows.h>
 #include <stdlib.h>
 #include <conio.h>
+#include <time.h>
 #include "struct.h"
 #define _CRT_SECURE_NO_WARNINGS
 
@@ -14,11 +15,6 @@ void gotoxy(int x, int y);
 
 void setcursortype();
 
-void event(Player* player, int* floor);
-void game1(Player* player, int* floor);
-void game2(Player* player, int* floor);
-void game3(Player* player, int* floor);
-void game4(Player* player, int* floor);
 /*
 char * input_text();
 int input_number();

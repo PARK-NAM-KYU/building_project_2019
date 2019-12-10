@@ -1,5 +1,5 @@
 #include "basic.h"
-#include<time.h>
+
 #define COLUMN 15
 #define ROW 10
 #define UP 72
@@ -10,9 +10,9 @@
 
 int show_blocks(char blocks[][ROW]);			//쌓인 블록들 보이기
 int set_block(char blocks[][ROW], char block[][4]);// 새로운 블록 나타내기
-int show_block(char block[][4]);			//새로운 블록 보여주기
+int show_nowBlock(char block[][4]);			//새로운 블록 보여주기
 int proceed_game(char blocks[][ROW]);		//블록을 내리거나 충돌 감지하기
-int collision_down(char blocks[][10]);		//밑이 1일때 모든 2를 1로 바꿈
+int collision_down(char blocks[][ROW]);		//밑이 1일때 모든 2를 1로 바꿈
 int detect_result(char blocks[][ROW]);// 패배시 1을 리턴
 
 int move_block(char blocks[][ROW]);
@@ -21,9 +21,14 @@ int move_right(char blocks[][ROW]);
 int bomb(char blocks[][ROW]);
 //int get_key();
 void game4(Player* player, int* floor) {
+	system("cls");
+	basic_view1("테트리스 게임");
+	basic_view2(&player);
+	gotoxy(0, 4);
 	int result = game4_view();
 	if (result == 1)
 		(*floor)++;
+	system("cls");
 }
 int game4_view() {
 	char blocks[COLUMN][ROW] = { 0 };		//1은 고정된 블록, 2는 현재 움직이는 블록을 나타낸다.
@@ -78,9 +83,9 @@ int show_blocks(char blocks[][ROW]) {		//블럭들을 보여준다 메인게임화면
 		}
 		printf("\n");
 	}
-	gotoxy(0, 0 + 3);
+	gotoxy(0, 0 + 4);
 }
-int show_block(char block[][4]) {		//해당 블럭 모양을 모여준다.
+int show_nowBlock(char block[][4]) {		//해당 블럭 모양을 모여준다.
 	int i, j;
 
 	for (i = 0; i < 4; i++) {
@@ -247,14 +252,14 @@ int bomb(char blocks[][ROW]) {
 
 		}
 		if (line >= 10) {
-			gotoxy(0, i + 3);
+			gotoxy(0, i + 4);
 			for (m = 0; m < ROW; m++) {
 				blocks[i][m] = 0;
 				printf("※");
 
 
 			}
-			gotoxy(0, 0 + 3);
+			gotoxy(0, 0 + 4);
 			Sleep(1000);
 			return 1;
 			/*							1번만 성공해도 클리어로 설정하므로 더이상진행하지 않는다.
