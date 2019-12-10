@@ -1,179 +1,158 @@
+#pragma once
 #include "basic.h"
-#include <stdlib.h>
-#include <time.h>
-#include <Windows.h>
-#include <conio.h>
-#define GREEN 10
-#define BLUE 11
-#define RED 13
 
-//벽돌깨기
-// 랜덤이 안되는거랑 키입력 오류 좀 있는데 화요일 전까지 고쳐볼께요 ㅠㅠ..
+int quiz1();
+int quiz2();
+int quiz3();
+int GetSpaceIdx(char[]);
+int CompStr(char[], char[]);
 
-typedef struct block {
-	int click;
-	int color;
-}Block;
+void game1(Player* player, int* floor)
+{
+	int randomQuiz = 0;
+	int result, temp;
 
-void game1_start();
-Block make_block();
-void show_block(Block);
-void game1_view(Block[]);
-void check_input(char, Block*);
-void reblock(Block*[]);
+	system("cls");
+	basic_view1("C언어 퀴즈");
+	basic_view2(player);
+	gotoxy(0, 7);
 
-void game1(Player* player, int* floor) {
-
-	int t, i, gameTime;
-	char ch;
-	Block blocks[50];
-	Block block;
-
-	game1_start(); //게임 시작 화면
-	for (i = 0;i < 50;i++) {
-		blocks[i] = make_block(&blocks[i]);
-		if (i == 49) blocks[i].click == 5; // 마지막은 5번 
-	}
-
-	t = (int)time(NULL);
+	printf("몇 번 문제를 푸시겠습니까? (1~3) ");
 	while (1) {
-		game1_view(&blocks);
-
-		if (kbhit()) {
-			ch = getch();
-			check_input(ch, &blocks[0]);
-			if (blocks[0].click == 0) {
-				reblock(blocks);
-			}
-		}
-		if (blocks[0].click == 0) { // 부셨을때 
-			if (blocks[1].click == -1) break; // 벽돌 다 부시면 break
-		}
-		gameTime = (int)time(NULL) - t;
-		if (gameTime > 30) break; //30초면 time over
+		scanf("%d", &temp);
+		if (temp >= 1 && temp <= 3) break;
+		printf("1부터 3까지 숫자를 다시 입력해주세요.\n");
 	}
-	//게임 결과
+	printf("\n");
 
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
-	gotoxy(50, 15);
-	if (gameTime <= 30) {
-		printf("WIn !! 걸린 시간 : %d초 \n", gameTime);
-		Sleep(3000);
+	switch (temp)
+	{
+	case 1: result = quiz1(); break;
+	case 2: result = quiz2(); break;
+	case 3: result = quiz3(); break;
 	}
-	else {
-		printf("Lose !!\n");
-		Sleep(3000);
-	}
-}
 
-void game1_start() {
+	system("cls");
+	basic_view1("C언어 퀴즈");
+	basic_view2(player);
+	gotoxy(48, 15);
 
-	int t;
-	clean_view();
-	gotoxy(42, 10);
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 14);
-	printf("[ 벽 돌 깨 기 ]");
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
-
-	gotoxy(42, 15);
-	printf("제한시간 : 1분");
-	gotoxy(37, 17);
-	printf("벽돌을 모두 파괴하세요 !");
-	Sleep(5000);
-
-	clean_view();
-	//5초 뒤에 시작
-	for (t = 5;t > 0;t--) {
-		gotoxy(49, 15);
-		printf("%d", t);
-		Sleep(1000);
-	}
-	clean_view();
-}
-
-Block make_block() {
-	int i;
-	int temp;
-	Block b;
-	srand(time(NULL));
-
-	//클릭횟수
-	temp = (rand() % 2) + 1;
-	b.click = temp;
-	//벽돌색깔
-	temp = rand() % 3;
-	if (temp == 0) b.color = GREEN;
-	if (temp == 1) b.color = BLUE;
-	if (temp == 2) b.color = RED;
-
-	return b;
-}
-
-void show_block(Block b) {
-	int i;
-
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), b.color);
-	for (i = 0;i < 15;i++) {
-		if (b.click == 1) printf("□");
-		if (b.click == 2) printf("■");
-	}
-}
-
-void game1_view(Block b[50]) {
-
-	int i;
-	int x = 20, y = 18;
-
-	gotoxy(24, 21);
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), GREEN);
-	printf("●");
-	gotoxy(28, 21);
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BLUE);
-	printf("●");
-	gotoxy(32, 21);
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), RED);
-	printf("●");
-
-	for (i = 0;i < 5;i++) {
-		gotoxy(x, y);
-		show_block(b[i]);
-		y--;
-		gotoxy(x, y);
-		show_block(b[i]);
-		y -= 2;
-	}
-}
-
-void check_input(char c, Block *b) {
-
-	int temp;
-	//일단 키를 asd로 했어욤
-	if (c == 75) temp = GREEN;
-	if (c == 72) temp = BLUE;
-	if (c == 77) temp = RED;
-	else temp = 0;
-
-	if (temp == b->color) {
-		b->click--;
+	if (result) {
+		printf("win");
+		Sleep(2000);
+		(*floor)++;
 	}
 	else {
-		gotoxy(10, 20);
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
-		printf("땡 !!");
-		Sleep(1000);
-		clean_view();
+		printf("lose!");
+		Sleep(2000);
 	}
+	system("cls");
 }
 
-void reblock(Block* b[50]) {
+int quiz1() {
 
-	int i;
+	char answer1[6] = "fopen";
+	char answer2[7] = "fclose";
+	char temp[20] = { 0 };
+	printf("int main(void) { \n");
+	printf("	FILE* fp1 = NULL;\n");
+	printf("	fp1 = 1._______(\". / data.txt\", \"w\"); \n");
+	printf("	fscanf(fp1, \"팀프로젝트\");\n");
+	printf("	2._______(fp1); \n");
+	printf("	return 0;\n");
+	printf("}\n\n");
 
-	for (i = 0;i < 50;i++) {
-		*b[i] = *b[i + 1];
-		if (b[i + 1]->click == 5) {
-			b[i + 1]->click = -1;
-			break;
-		}
+	printf("1번에 들어갈 알맞은 단어는 ? ");
+	scanf("%s", temp);
+
+	printf("2번에 들어갈 알맞은 단어는 ? ");
+	scanf("%s", temp);
+
+	if (CompStr(temp, answer2)) return 0;
+
+	printf("딩동댕~");
+	Sleep(2000);
+	return 1;
+}
+
+int quiz2() {
+
+	char answer1[7] = "double";
+	char answer2[3] = "10";
+	char temp[20] = { 0 };
+
+	printf("두 실수(8bytes)를 받아서 어떤 일을 하는 add함수가 있다.\n");
+	printf("int main(void) { \n");
+	printf("	int(*pf)(_____,_____);\n");
+	printf("	double x = 3.14;\n");
+	printf("	double y = 7.83;\n");
+	printf("	double result = 0;\n");
+	printf("	pf = add;\n");
+	printf("	result = (*pf)(x, y);\n");
+	printf("	printf(\"%%d\",result);\n");
+	printf("	return 0;\n");
+	printf("}\n\n");
+
+	printf("빈칸에 들어갈 알맞은 단어는 ? ");
+	scanf("%s", temp);
+
+	if (CompStr(temp, answer1)) return 0;
+
+	printf("코드 실행후 출력되는 숫자는 ? ");
+	scanf("%s", temp);
+	if (CompStr(temp, answer2)) return 0;
+
+	printf("딩동댕~");
+	Sleep(2000);
+	return 1;
+}
+
+int quiz3() {
+
+	char answer[3] = "20";
+	char temp[20] = { 0 };
+
+	printf("배열에 메모리 동적할당을 하는 코드입니다.\n");
+	printf("int main(void) { \n");
+	printf("	int size = 5;\n");
+	printf("	int *arr;\n\n");
+	printf("	arr = (int*)malloc(sizeof(int)*size);\n");
+	printf("	memset(arr,0x0,sizeof(int)*size);\n");
+	printf("	printf(\"배열에 할당된 공간은 %%d\ bytes 입니다.\",_msize(arr));\n");
+	printf("	free(arr);\n");
+	printf("	arr = NULL;\n");
+	printf("	return 0;\n");
+	printf("}\n\n");
+
+	printf("출력된 값은 ? ");
+	scanf("%s", temp);
+
+	if (CompStr(temp, answer)) return 0;
+
+	printf("딩동댕~");
+	Sleep(2000);
+	return 1;
+
+}
+
+int GetSpaceIdx(char str[]) {
+
+	int len, i;
+
+	len = strlen(str);
+
+	for (i = 0;i < len;i++) {
+		if (str[i] == ' ') return i;
 	}
+	return -1; //공백문자가 존재하지 않을 경우
+}
+
+int CompStr(char str1[], char str2[]) {
+
+	int idx1 = GetSpaceIdx(str1);
+	int idx2 = GetSpaceIdx(str2);
+
+	if (idx1 != idx2) return 1;
+
+	else return strcmp(str1, str2);
 }
