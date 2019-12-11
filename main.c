@@ -19,12 +19,6 @@ int main() {
 	system("mode con cols=100 lines=30");//콘솔창 고정
 	setcursortype(); //커서 없애주기
 
-	//1.시작화면 출력하기
-	basic_view2(&me);
-	start_view();
-	//2. 일단 하 기준으로 난이도 설정
-	//3. 건물 만들고 보여주기
-
 	building = make_building();
 	building_info(&building); // 빌딩 정보 넣어주기
 

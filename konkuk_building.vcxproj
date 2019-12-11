@@ -153,7 +153,6 @@
     <ClCompile Include="main.c" />
     <ClCompile Include="make_building.c" />
     <ClCompile Include="result_view.c" />
-    <ClCompile Include="start_view.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="basic.h" />

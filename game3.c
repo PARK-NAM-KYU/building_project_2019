@@ -43,6 +43,7 @@ void game3(Player* player, int* floor) {
 		me.Bullet[i].exist = false;
 	}
 	me.shape(me.x, me.y);
+
 	while (1)
 	{
 		if (me.health <= 0 || cnt_hunt >= 5)break;

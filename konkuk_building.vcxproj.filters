@@ -57,9 +57,6 @@
     <ClCompile Include="make_building.c">
       <Filter>소스 파일\logic</Filter>
     </ClCompile>
-    <ClCompile Include="start_view.c">
-      <Filter>소스 파일\view</Filter>
-    </ClCompile>
     <ClCompile Include="result_view.c">
       <Filter>소스 파일\view</Filter>
     </ClCompile>
