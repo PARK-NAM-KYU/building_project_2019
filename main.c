@@ -15,6 +15,7 @@ int main() {
 
 	me.potionList = addPotion(300);
 	currentPotion = me.potionList;
+	
 
 	system("mode con cols=100 lines=30");//콘솔창 고정
 	setcursortype(); //커서 없애주기
